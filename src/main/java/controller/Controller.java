@@ -49,10 +49,8 @@ public class Controller {
                 case 2: discountMenu(); break;
                 case 3: priceAlertMenu(); break;
                 case 4: dailyShoppingBasket(); break;
-                case 5: listBestDiscounts(); break;
-                case 6: listNewDiscounts(); break;
                 //case 7: showPriceHistory(); break;
-                case 7: showProductSubstitutes(); break;
+                case 5: showProductSubstitutes(); break;
                 default:
                     System.out.println("Invalid option. Please try again.");
             }

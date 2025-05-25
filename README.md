@@ -23,7 +23,7 @@ a message saying that no alerts were triggered.
 If you want to make a shopping list with some products, choose option 4.
 The shopping list will be saved in a SQL database. 
 
-Products with highest current discounts are shown if you choose the last option, option number 5.
+If you want to identify the best buys, choose option number 5. It will show the value per unit.
 
 The PriceHistory feature has all the methods implemented, the only thing remaining is to develop the
 product date logic.
