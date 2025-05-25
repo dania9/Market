@@ -57,7 +57,7 @@ public class PriceHistoryService {
             priceHistoryRepository.addPriceHistory(ph);
         }
 
-        // Now, fetch all added items (sorted by date)
+
         List<PriceHistory> result = priceHistoryRepository.getAll().stream()
                 .sorted(Comparator.comparing(PriceHistory::getDate))
                 .collect(Collectors.toList());
