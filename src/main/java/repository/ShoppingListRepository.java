@@ -10,7 +10,7 @@ import java.util.List;
 public class ShoppingListRepository {
 
     private final Connection connection;
-    private final ProductRepository productRepository; // to get Product objects by ID
+    private final ProductRepository productRepository;
 
     public ShoppingListRepository(Connection connection, ProductRepository productRepository) {
         this.connection = connection;
@@ -28,16 +28,14 @@ public class ShoppingListRepository {
                 String productId = rs.getString("product_id");
                 int quantity = rs.getInt("quantity");
 
-                // Find product(s) by id in the ProductRepository (returns List<Product>)
+
                 List<Product> productsFound = productRepository.findById(productId);
 
                 if (!productsFound.isEmpty()) {
-                    // Since productId might map to multiple products (different brands),
-                    // here you can decide to pick the first, or all. I'll pick the first for example:
                     Product product = productsFound.get(0);
                     shoppingListItems.add(new ShoppingList(product, quantity));
                 } else {
-                    // product not found, handle as needed (skip or create dummy product)
+
                     System.out.printf("Warning: productId %s found in shopping_list but not in ProductRepository%n", productId);
                 }
             }
